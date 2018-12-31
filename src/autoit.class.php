@@ -134,7 +134,7 @@ class AutoIt
 			$y = "Default";
 		}
 		$stdout = "";
-		$this->exec("ConsoleWrite(MouseClick (" . $this->quote_string($button) . ".,{$x},{$y},{$clicks},{$speed}));", $stdout);
+		$this->exec("ConsoleWrite(MouseClick (" . $this->quote_string($button) . ",{$x},{$y},{$clicks},{$speed}));", $stdout);
 		if (trim($stdout) !== "1") {
 			throw new \RuntimeException("the button is not in the list or invalid parameter as x without y.");
 		}
