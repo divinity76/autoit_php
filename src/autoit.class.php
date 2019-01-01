@@ -1,5 +1,8 @@
 <?php
 declare (strict_types = 1);
+// hello there!
+// there is about 120 lines of php<->autoit glue, 
+// the first autoit function starts with "public function MouseMove"
 class AutoIt
 {
 	protected $srch;
