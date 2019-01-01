@@ -172,4 +172,18 @@ class AutoIt
 		}
 		return $ret;
 	}
+	/**
+	 * Pauses execution of the script until the requested window is active.
+	 * returns bool(true) on success, and bool(false) on timeout.
+	 * https://www.autoitscript.com/autoit3/docs/functions/WinWaitActive.htm
+	 * @param string $title
+	 * @param string $text
+	 * @param integer $timeout
+	 * @return boolean
+	 */
+	public function WinWaitActive(string $title, string $text = "", int $timeout = 0) : bool
+	{
+		$this->exec("ConsoleWrite(WinWaitActive (" . $this->quote_string($title) . ", " . $this->quote_string($text) . ",{$timeout}));", $stdout);
+		return (trim($stdout) !== "0");
+	}
 };
