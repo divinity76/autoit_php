@@ -1,7 +1,7 @@
 # autoit_php
 AutoIt library for php, exposing AutoIt functions in php userland
 
-as of writing, only 3 functions are added: `MouseMove` and `MouseClick` and `_ScreenCapture_Capture`
+as of writing, only 4 functions are added: `MouseMove` and `MouseClick` and `_ScreenCapture_Capture` and `WinWaitActive`
 
 # example usage
 ```php
