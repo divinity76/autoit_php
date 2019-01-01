@@ -189,4 +189,22 @@ class AutoIt
 		$this->exec("ConsoleWrite(WinWaitActive (" . $this->quote_string($title) . ", " . $this->quote_string($text) . ",{$timeout}));", $stdout);
 		return (trim($stdout) !== "0");
 	}
+	/**
+	 * Sends simulated keystrokes to the active window.
+	 * https://www.autoitscript.com/autoit3/docs/functions/Send.htm
+	 *
+	 * @param string $keys
+	 * @param boolean $raw
+	 * @param integer $SendKeyDelay
+	 * @param integer $SendKeyDownDelay
+	 * @return void
+	 */
+	public function Send(string $keys, bool $raw = false, int $SendKeyDelay = 5, int $SendKeyDownDelay = 5) : void
+	{
+		$code =
+			"AutoItSetOption ( 'SendKeyDelay', {$SendKeyDelay});\r\n" .
+			"AutoItSetOption ( 'SendKeyDownDelay', {$SendKeyDownDelay});\r\n" .
+			"Send(" . $this->quote_string($keys) . "," . ((int)$raw) . ");";
+		$this->exec($code);
+	}
 };
