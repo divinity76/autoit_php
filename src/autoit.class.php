@@ -67,7 +67,7 @@ class AutoIt
 				return $cache;
 			}
 		}
-		throw new \RuntimeException("unable to find AutoIt3.exe! hardcode it or something.");
+		throw new \RuntimeException("unable to find AutoIt3.exe! supply the path in the constructor!");
 	}
 	function __destruct()
 	{
